@@ -1,0 +1,16 @@
+﻿using E_Commerce01.Domain.Contract.Repositories;
+using E_Commerce01.Domain.Entities.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E_Commerce01.Domain.Contract
+{
+    public interface IUnitOfWork
+    {
+        Task<int> SaveChangesAsync(CancellationToken ct = default);
+        IGenericRepository<TEntity, TKey> GetRepository<TEntity, TKey>() where TEntity : BaseEntity<TKey>;
+    }
+}
