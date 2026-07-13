@@ -1,4 +1,5 @@
-﻿using E_Commerce01.Application.Common;
+﻿using E_Commerce01.API.Attributes;
+using E_Commerce01.Application.Common;
 using E_Commerce01.Application.DTOs.Products;
 using E_Commerce01.Application.Services.Contracts;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +12,7 @@ namespace E_Commerce01.API.Controllers
     public class ProductsController(IProductService productService) : ApiBaseController
     {
         [HttpGet]
+        [RedisCache(100)]
         public async Task<ActionResult<IReadOnlyList<ProductDto>>> GetAllProducts([FromQuery]ProductParams productParams , CancellationToken ct = default)
         {
             var result = await productService.GetAllProductAsync(productParams , ct);

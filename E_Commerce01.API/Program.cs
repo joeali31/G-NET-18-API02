@@ -2,8 +2,11 @@
 using E_Commerce01.API.Extensions;
 using E_Commerce01.Application;
 using E_Commerce01.Domain.Contract;
+using E_Commerce01.Domain.Identity;
 using E_Commerce01.Infrastructure;
 using E_Commerce01.Infrastructure.DataSeeding;
+using E_Commerce01.Infrastructure.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.FileProviders;
 using System.Threading.Tasks;
 
