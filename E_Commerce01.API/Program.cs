@@ -1,6 +1,7 @@
 
 using E_Commerce01.API.Extensions;
 using E_Commerce01.Application;
+using E_Commerce01.Application.Helpers;
 using E_Commerce01.Domain.Contract;
 using E_Commerce01.Domain.Identity;
 using E_Commerce01.Infrastructure;
@@ -28,6 +29,7 @@ namespace E_Commerce01.API
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("JWT"));
 
             var app = builder.Build();
 
@@ -48,6 +50,7 @@ namespace E_Commerce01.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

@@ -2,6 +2,7 @@
 using E_Commerce01.Application.Common;
 using E_Commerce01.Application.DTOs.Products;
 using E_Commerce01.Application.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

@@ -13,5 +13,10 @@ namespace E_Commerce01.Application.Services.Contracts
         Task<Result<IdentityUserResult>> FindUserByEmailAsync(string email , CancellationToken ct = default);
         Task<Result<bool>> CheckPasswordAsync(string email , string password , CancellationToken ct = default);
         Task<Result<IdentityUserResult>> CreateUserAsync(RegisterDto registerDto , CancellationToken ct = default);
+        Task<Result<IReadOnlyList<string>>> GetUserRolesAsync(string email , CancellationToken ct = default);
+        Task<Result<AddressDto>> GetCurrentUserAddressAsync(string email , CancellationToken ct = default);
+        Task<Result<AddressDto>> UpdateCurrentUserAddressAsync(string email, AddressDto addressDto, CancellationToken ct = default);
+
+
     }
 }

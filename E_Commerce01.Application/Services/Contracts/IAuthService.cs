@@ -12,5 +12,11 @@ namespace E_Commerce01.Application.Services.Contracts
     {
         Task<Result<UserDto>> LoginAsync(LoginDto loginDto , CancellationToken ct =default);
         Task<Result<UserDto>> RegisterAsync(RegisterDto registerDto , CancellationToken ct =default);
+        Task<Result<bool>> CheckEmailExistAsync(string email, CancellationToken ct =default);
+        Task<Result<UserDto>> GetCurrentUserAsync(string email, CancellationToken ct =default);
+        Task<Result<AddressDto>> GetCurrentUserAddressDtoAsync(string email , CancellationToken ct = default);
+
+        Task<Result<AddressDto>> UpdateCurrentUserAddressAsync(string email , AddressDto addressDto , CancellationToken ct =default);
+
     }
 }
